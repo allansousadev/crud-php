@@ -21,7 +21,7 @@ $row = $res->fetch_object();
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label d-flex justify-content-start">Password</label>
-      <input type="password" name="senha" required class="form-control" id="exampleInputPassword1">
+      <input type="password" name="senha" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="mb-3">
       <label for="exampleInputDate" class="form-label d-flex justify-content-start">Data Nascimento</label>

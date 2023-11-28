@@ -33,19 +33,32 @@ switch ($_REQUEST["acao"]) {
       <strong>Informações atualizadas com sucesso</strong></br>Você será direcionado a página de listagem de usuários
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>';
-      echo '<script>setTimeout(function() { location.href="?page=listar"; }, 3000);</script>';
-      // echo '<div class="alert alert-success" role="alert">Atualizado com sucesso!</div>';
+      echo '<script>setTimeout(function() { location.href="?page=listar"; }, 4000);</script>';
     } else {
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong>As informações não foram atualizadas</strong></br>Você será direcionado a página de listagem de usuários, por favor entre em contato com o responsável técnico
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>';
-      echo '<script>setTimeout(function() { location.href="?page=listar"; }, 3000);</script>';
-      // echo '<div class="alert alert-danger" role="alert">Não foi possível editar. Por favor, tente novamente.</div>';
+      echo '<script>setTimeout(function() { location.href="?page=listar"; }, 4000);</script>';
     }
     break;
   case 'excluir':
-    # Adicione aqui a lógica para excluir um registro
+    $sql = "DELETE FROM usuarios WHERE id=" . $_REQUEST["id"];
+    $res = $conn->query($sql);
+
+    if ($res == true) {
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Informações excluídas com sucesso</strong></br>Você será direcionado a página de listagem de usuários
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+      echo '<script>setTimeout(function() { location.href="?page=listar"; }, 4000);</script>';
+    } else {
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Não foi possível excluir esse registro</strong></br>Você será direcionado a página de listagem de usuários, por favor entre em contato com o responsável técnico
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+      echo '<script>setTimeout(function() { location.href="?page=listar"; }, 4000);</script>';
+    }
     break;
 
   default:

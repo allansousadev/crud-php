@@ -3,8 +3,8 @@ echo "<h1>Formulário de cadastro</h1>";
 ?>
 
 <div class="container shadow p-3 mb-5 mt-5 bg-body- rounded">
-  <form action="?page=editar" method="POST">
-    <input type="hidden" name="id" value="<?php echo "$row->id"; ?>">
+  <form action="?page=salvar" method="POST">
+    <input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
       <label for="exampleInputName" class="form-label d-flex justify-content-start">Nome</label>
       <input type="text" name="nome" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Informe seu nome">
